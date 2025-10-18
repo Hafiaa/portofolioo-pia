@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,20 +12,26 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "Hafia - Multidisciplinary Creative",
-  description: "Portfolio of Hafia - Designer, Photographer, and Event Visual Director",
+  title: "Hafia — Multidisciplinary Creative",
+  description:
+    "Portfolio of Hafia — Designer, Photographer, and Event Visual Director.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
       >
         {children}
       </body>

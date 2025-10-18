@@ -17,4 +17,51 @@
   }
 }
 
-/* ===== THEME ===*
+/* ===== BASE STYLES ===== */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+a:hover {
+  color: var(--accent);
+}
+
+/* Container helper */
+.container {
+  max-width: 72rem; /* 1152px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* 24px */
+  padding-right: 1.5rem;
+}
+
+/* Section spacing */
+section {
+  padding-top: 5rem; /* 80px */
+  padding-bottom: 5rem;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
